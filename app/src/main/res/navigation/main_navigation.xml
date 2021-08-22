@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/taomTurlariFragment">
+
+    <fragment
+        android:id="@+id/taomTurlariFragment"
+        android:name="uz.mirzakomil.kafekotlin.ui.fragments.TaomTurlariFragment"
+        android:label="TaomTurlariFragment"
+        tools:layout="@layout/fragment_taom_turlari">
+        <action
+            android:id="@+id/action_taomTurlariFragment_to_descriptionFragmentContainer"
+            app:destination="@id/descriptionFragment"
+
+            />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/descriptionFragment"
+        android:name="uz.mirzakomil.kafekotlin.ui.fragments.DescriptionFragment"
+        android:label="DescriptionFragment"
+        tools:layout="@layout/fragment_description">
+        <action
+            android:id="@+id/action_descriptionFragment_to_totalFragmentContainer"
+            app:destination="@id/totalFragment" />
+
+        <argument
+            android:name="string"
+            app:argType="string"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/totalFragment"
+        android:name="uz.mirzakomil.kafekotlin.ui.fragments.TotalFragment"
+        android:label="TotalFragment"
+        tools:layout="@layout/fragment_total">
+        <argument
+            android:name="title"
+            app:argType="string"/>
+    </fragment>
+</navigation>
